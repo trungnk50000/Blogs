@@ -5,10 +5,10 @@
   },
   "IndexPage": {
     "description": "Đây là một ví dụ minh họa sử dụng <code>next-intl</code> với Next.js App Router. Khi thay đổi ngôn ngữ ở góc trên bên phải, nội dung của trang này sẽ thay đổi theo.",
-    "title": "Ví dụ next-intl"
+    "title": "Góc của tui - Trung Kim"
   },
   "LocaleLayout": {
-    "title": "Ví dụ next-intl"
+    "title": "Góc của tui - Trung Kim"
   },
   "LocaleSwitcher": {
     "label": "Thay đổi ngôn ngữ",
@@ -22,7 +22,11 @@
     "aboutme": "Về tôi",
     "blogs": "Blog tôi viết",
     "experiences": "Kinh nghiệm",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "frameChat2": {
+      "greeting": "Hí! Tui là Trung",
+      "profession": "một 'Phờ-rôn-en engineer'"
+    }
   },
   "NotFoundPage": {
     "description": "Vui lòng kiểm tra thanh địa chỉ của trình duyệt hoặc sử dụng điều hướng để chuyển đến một trang đã biết.",

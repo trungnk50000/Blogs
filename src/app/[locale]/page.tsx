@@ -1,6 +1,6 @@
+import PageLayout from '@/components/layouts/PageLayout';
 import {useTranslations} from 'next-intl';
 import {unstable_setRequestLocale} from 'next-intl/server';
-import PageLayout from '@/components/PageLayout';
 
 type Props = {
   params: {locale: string};

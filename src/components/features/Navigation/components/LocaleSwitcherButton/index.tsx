@@ -1,27 +1,25 @@
-"use client";
+'use client'
 
-import clsx from "clsx";
-import { useParams } from "next/navigation";
-import { ChangeEvent, ReactNode, useTransition } from "react";
-import { useRouter, usePathname } from "@/navigation";
-import { useLocale, useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
+import { useParams } from 'next/navigation'
+import { useTransition } from 'react'
+import { useRouter, usePathname } from '@/navigation'
+import { useLocale } from 'next-intl'
+import { Button } from '@/components/ui/button'
 
 type LanguageButtonProps = {
-  title: string;
-  locale: string;
-  currentLocale: string;
-  onClick: () => void;
-  isPending: boolean;
-};
+  title: string
+  locale: string
+  currentLocale: string
+  onClick: () => void
+  isPending: boolean
+}
 
 export default function LocaleSwitcherButton() {
-  const t = useTranslations("LocaleSwitcher");
-  const locale = useLocale();
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
-  const pathname = usePathname();
-  const params = useParams();
+  const locale = useLocale()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+  const pathname = usePathname()
+  const params = useParams()
 
   const LanguageButton: React.FC<LanguageButtonProps> = ({
     title,
@@ -30,16 +28,16 @@ export default function LocaleSwitcherButton() {
     onClick,
     isPending,
   }) => (
-    <Button title={title} onClick={onClick} disabled={isPending}>
+    <Button title={title} onClick={onClick} disabled={isPending} variant={'secondary'}>
       <h2
         className={`cursor-pointer text-lg font-bold ${
-          currentLocale === locale ? "text-primary" : ""
+          currentLocale === locale ? 'text-primary' : 'text-[#75787e]'
         }`}
       >
         {locale.toUpperCase()}
       </h2>
     </Button>
-  );
+  )
   const handleLocaleChange = (locale: string) => {
     startTransition(() => {
       router.replace(
@@ -47,10 +45,10 @@ export default function LocaleSwitcherButton() {
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
         { pathname, params },
-        { locale: locale }
-      );
-    });
-  };
+        { locale: locale },
+      )
+    })
+  }
   return (
     <>
       <div className="flex h-5 items-center space-x-4 text-sm">
@@ -58,7 +56,7 @@ export default function LocaleSwitcherButton() {
           title="Switch to vi"
           locale="vi"
           currentLocale={locale}
-          onClick={() => handleLocaleChange("vi")}
+          onClick={() => handleLocaleChange('vi')}
           isPending={isPending}
         />
         <div
@@ -71,10 +69,10 @@ export default function LocaleSwitcherButton() {
           title="Switch to en"
           locale="en"
           currentLocale={locale}
-          onClick={() => handleLocaleChange("en")}
+          onClick={() => handleLocaleChange('en')}
           isPending={isPending}
         />
       </div>
     </>
-  );
+  )
 }
