@@ -19,7 +19,7 @@ export default function NavigationLink<Pathname extends keyof typeof pathnames>(
       aria-current={isActive ? 'page' : undefined}
       className={clsx(
         'inline-block px-2 py-3 text-sm font-medium capitalize transition-colors xl:text-lg',
-        isActive ? 'text-primary' : 'text-[#75787e]',
+        isActive ? 'text-primary' : 'text-[#CACACA]',
       )}
       href={href}
       {...rest}

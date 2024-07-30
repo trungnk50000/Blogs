@@ -96,19 +96,21 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
   const messages = await getMessages()
 
   return (
-    <html className="" lang={locale} suppressHydrationWarning>
-      <body className={clsx(mali.className, '')}>
+    <html
+      className="bg-background h-screen scroll-pt-[3.5rem] overflow-x-hidden"
+      lang={locale}
+      suppressHydrationWarning
+    >
+      <body className={clsx(mali.className, 'min-h-full')}>
         <NextIntlClientProvider messages={messages}>
           <Providers>
-            <main className="min-f-screen relative bg-white dark:bg-black">
+            <main className="min-f-screen bg-white dark:bg-[#242424]">
               <Navigation />
-              <Transition>
-                <div className="mb-20 mt-20 flex-grow">
-                  <div className="mx-auto mt-4 w-full px-4 md:container md:mt-10 md:px-20">
-                    {children}
-                  </div>
+              <div className="mb-20 mt-20 flex-grow">
+                <div className="mx-auto mt-4 w-full px-4 md:container md:mt-10 md:px-20">
+                  <Transition>{children}</Transition>
                 </div>
-              </Transition>
+              </div>
               <Footer />
             </main>
           </Providers>

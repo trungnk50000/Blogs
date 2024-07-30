@@ -265,3 +265,27 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.header-scroll {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  border: 'border-b border-b-[#ddd]/50 bg-white shadow';
+}
+
+.header-scroll.is-sticky {
+  position: fixed;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

@@ -31,7 +31,7 @@ export default function LocaleSwitcherButton() {
     <Button title={title} onClick={onClick} disabled={isPending} variant={'secondary'}>
       <h2
         className={`cursor-pointer text-lg font-bold ${
-          currentLocale === locale ? 'text-primary' : 'text-[#75787e]'
+          currentLocale === locale ? 'text-primary' : 'text-[#CACACA]'
         }`}
       >
         {locale.toUpperCase()}
